@@ -1,0 +1,14 @@
+.container-image{
+    border-radius: 50%;
+    height:320px;
+    width: 350px;;
+}
+.description{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(232, 234, 236);
+    padding: 20px;
+    margin:10px;
+    border-radius: 10px;
+}
