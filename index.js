@@ -6,7 +6,6 @@ const signUp = () =>{
     let email = document.getElementById("signup-email").value
     let phoneNumber = document.getElementById("phone-number").value
     let password = document.getElementById("signup-password").value
-    // console.log(firstName, lastName, email, phoneNumber, password)
 
     document.getElementById("sign-up-form").reset()
 
@@ -21,6 +20,7 @@ const signUp = () =>{
     alert("signup successful")
     USERS_DB.push(userDetails)
     console.log(USERS_DB)
+    changeNavLinks(userDetails)
 }
 
 const signIn = () =>{
@@ -28,15 +28,15 @@ const signIn = () =>{
     let signInPassword = document.getElementById("signin-password").value
 
     let requiredUser = USERS_DB.find(user=> user.email === signInEmail && user.password === signInPassword)
-
     
         if(requiredUser){
             alert("Access granted")
-            goToHome()
+            changeNavLinks(requiredUser)
         } else{
             alert("Access denied")
         }
     
+        document.getElementById("sign-in-form").reset()
 
 }
 
@@ -58,6 +58,31 @@ const goToSignIn=()=>{
     document.getElementById('home').style.display='none';
     document.getElementById('sign-up').style.display='none';
 }
+
+const changeNavLinks =(currentUser)=>{
+    let {firstName, lastName} = currentUser
+    document.getElementById("sign-up-nav-link").style.display = "none"
+    document.getElementById("sign-in-nav-link").style.display = "none"
+    document.getElementById("profile-nav-link").style.display = "block"
+    document.getElementById("sign-out-nav-link").style.display = "block"
+
+    document.getElementById("profile-nav-link").innerText = `Hi, ${firstName} ${lastName}`
+
+}
+
+
+const signOut = () =>{
+    document.getElementById("profile-nav-link").innerText = ""
+
+    document.getElementById("sign-up-nav-link").style.display = "block"
+    document.getElementById("sign-in-nav-link").style.display = "block"
+    document.getElementById("profile-nav-link").style.display = "none"
+    document.getElementById("sign-out-nav-link").style.display = "none"
+
+    
+
+}
+
 
 
 

@@ -34,10 +34,16 @@
         </ul>
         <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#" onclick="goToSignUp()">Sign Up</a>
+            <a class="nav-link" id="sign-up-nav-link" href="#" onclick="goToSignUp()">Sign Up</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" onclick="goToSignIn()">Sign In</a>
+            <a class="nav-link" id="sign-in-nav-link" href="#" onclick="goToSignIn()">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-nav-link" href="#">Hi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="sign-out-nav-link" href="#" onclick="signOut()">Sign Out</a>
           </li>
         </ul>
       </div>
@@ -89,7 +95,7 @@
       </p>
     </div>
 
-    <!-- SIGlast-nameN UP -->
+    <!-- SIGN UP -->
     <div id="sign-up">
       <form class="row g-3" id="sign-up-form">
         <h1 class="display-4 form-title" style="text-align: left">Sign Up</h1>
